@@ -2,9 +2,7 @@
 
 Deployed Url :- https://rocky-plateau-24263.herokuapp.com/
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Unit Test 100% test cases passed report
 
 ![Alt text](https://user-images.githubusercontent.com/49248504/101983855-87c36f00-3ca3-11eb-8e07-c205f2b16d72.png?raw=true "Unit Test 100% test cases passed report")
 ## Code scaffolding
