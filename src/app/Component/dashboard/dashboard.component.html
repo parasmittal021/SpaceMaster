@@ -1,0 +1,101 @@
+<div class="body">
+    <h1 style="margin-bottom: 0px;">SpaceX Launch Programs</h1>
+    <div class="row" style=" margin-left: 10px;">
+        <div class="col-md-3 col-lg-2 col-xl col-sm-12"
+            style=" margin-top: 0px;background-color: white; border-radius: 5px; padding: 10px;">
+            <div>
+                <h2><span style="font-size: x-large;"><strong>Filters</strong></span></h2>
+            </div>
+            <div>
+                <div style="text-align:center;">
+                    <span style="font-size: large;"><strong> Launch Year</strong></span>
+                    <hr class="line">
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-lg-6 col-6 col-sm-6" *ngFor="let y of year; let i = index">
+                        <button alt="Launch Year" #dataLink="routerLinkActive" class="button" type="button"
+                            name="launchYear" #launchYear
+                            (click)="dataLink.isActive ? removeParams(['/launches'], {launch_year: y }) : false"
+                            [routerLink]="[]" [queryParams]="{launch_year: y }" routerLinkActive="active"
+                            queryParamsHandling="merge">{{y}}</button>
+                    </div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="display: inline-block;">
+                        <span style="font-size: large;"><strong> Successful Launch</strong></span>
+                        <hr class="line">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-lg-6 col-6 col-sm-6" *ngFor="let a of trueorfalse; let i = index">
+                        <button alt="Successful Launch" #dataLink="routerLinkActive" class="button" type="button"
+                            #successData
+                            (click)="dataLink.isActive ? removeParams(['/launches'], {launch_success: a.value }) : false"
+                            [routerLink]="[]" [queryParams]="{launch_success: a.value}" routerLinkActive="active"
+                            queryParamsHandling="merge">{{a.name}}</button>
+
+                    </div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="display: inline-block;">
+                        <span style="font-size: large;"><strong>Successful Landing</strong></span>
+                        <hr class="line">
+                    </div>
+                </div>
+                <div>
+                    <div class="row">
+                        <div class="col-md-6 col-lg-6 col-6 col-sm-6" *ngFor="let a of trueorfalse; let i = index">
+                            <button alt="Successful Landing" #dataLink="routerLinkActive" type="button" class="button"
+                                #landing
+                                (click)="dataLink.isActive ? removeParams(['/launches'], {land_success: a.value}) : false"
+                                [routerLink]="[]" [queryParams]="{land_success: a.value}" routerLinkActive="active"
+                                queryParamsHandling="merge">{{a.name}}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=" margin-padding col-md-9 col-lg-10 col-xl col-sm-12">
+            <div class="card-group" style="margin-top: 0px;">
+                <div class=" col-md-6 col-lg-3 col-sm-12 card" *ngFor="let item of viewdata"
+                    style=" margin: 0px 7px 10px 7px;">
+                    <div style="background-color: lightgrey; text-align: center;">
+                        <img style="margin-left: auto; margin-right: auto;" [lazyLoad]="item.links.mission_patch"
+                            alt="space photo" loading="lazy" width="200" height="200">
+                    </div>
+                    <ul style="list-style-type: none;padding:0px;">
+                        <li style="color:darkblue;font-size: large;"><strong>{{item.mission_name}}
+                                #{{item.flight_number}}</strong>
+                        </li>
+                        <li style="font-size: large;display:flex;margin-top: 6px;"><strong>Mission
+                                Id's:</strong>
+                            <ul style="list-style-type: none; display: block;padding: 1px;">
+                                <li style="color:darkblue;">{{viewdata.mission_id}}</li>
+                            </ul>
+                        </li>
+                        <li style="color:darkblue;">{{item.mission_id}}</li>
+                        <li style="margin-top:6px; font-size: large;display: flex;"><strong>Launch Year :</strong>
+                            <ul style="list-style-type: none; display: inline;padding: 1px;">
+                                <li style="color:darkblue;">{{item.launch_year}}</li>
+                            </ul>
+                        </li>
+                        <li style="margin-top:6px;font-size: large;display: flex;"><strong>Succesful Launch:</strong>
+                            <ul style="list-style-type: none;padding: 1px;">
+                                <li style="color:darkblue;">{{item.launch_success}}</li>
+                            </ul>
+                        </li>
+                        <li style="margin-top:6px;font-size: large;display: flex;">
+                            <strong>Succesful Landing:</strong>
+                            <ul style="list-style-type: none;padding: 1px;">
+                                <li style="color:darkblue;">{{item?.rocket?.first_stage?.cores[0]?.land_success}}</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <strong>Developed by: {{username}}</strong>
+    </div>
+</div>

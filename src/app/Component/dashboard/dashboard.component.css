@@ -1,0 +1,117 @@
+* {
+    box-sizing: border-box;
+    position: relative;
+  }
+  div.body {
+      background-color: lightgrey;
+    }
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Style the counter cards */
+.card-group{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+}
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    background-color: white;
+    border-radius: 5px;
+    flex-direction: column;
+    display: flex; 
+  }
+  img {
+    width: 100%;
+    height: auto;
+  }
+  .footer {
+    color: black;
+    text-align: center;
+    font-size: large;
+    padding: 15px;
+  }
+  .button{
+      border-radius: 5px;
+      background-color: rgb(127,255,0);
+      color:black;
+      font-size: 16px;
+      text-align: center;
+      font-weight: bold;
+      cursor: pointer;
+      padding: 5px 5px;
+      border-color: chartreuse;
+       width: 100%; 
+  }
+  .button:hover {background-color: 		rgb(34,139,34);
+    border-color: 		rgb(34,139,34);
+}
+.active {
+    background-color: 		rgb(34,139,34);
+    border-color: 		rgb(34,139,34);
+  }
+hr.line {
+    margin-top: 0px;
+    height: 2px;
+    background:lightgray;
+    border: none;
+  }
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+  }
+
+  /* For mobile phones: */
+  @media only screen and (max-width: 700px) {
+    .col-sm-6 {width:46%;text-align: center;}
+    .col-sm-12 {width: 100%; margin-top: 10px; }
+ 
+  }
+  @media only screen and (min-width: 700px) {
+    /* For tablets: */   
+    .col-md-1 {width: 8.33%;}
+    .col-md-2 {width: 16.66%;}
+    .col-md-3 {width: 25%;}
+    .col-md-4 {width: 33.33%;}
+    .col-md-5 {width: 41.66%;}
+    .col-md-6 {width: 46%; text-align: left;}
+    .col-md-7 {width: 58.33%;}
+    .col-md-8 {width: 66.66%;}
+    .col-md-9 {width: 75%;margin-top: 0px;
+        padding-top: 0px;}
+    .col-md-10 {width: 83.33%;}
+    .col-md-11 {width: 91.66%;}
+    .col-md-12 {width: 100%;}
+  }
+  @media only screen and (min-width: 1024px) {
+    /* For desktop: */
+    .col-lg-1 {width: 8.33%;}
+    .col-lg-2 {width: 16.66%;}
+    .col-lg-3 {width: 23%;}
+    .col-lg-4 {width: 33.33%;}
+    .col-lg-5 {width: 41.66%;}
+    .col-lg-6 {width: 50%;}
+    .col-lg-7 {width: 58.33%;}
+    .col-lg-8 {width: 66.66%;}
+    .col-lg-9 {width: 75%;}
+    .col-lg-10 {width: 83.33%;margin-top: 0px;
+        padding-top: 0px;}
+    .col-lg-11 {width: 91.66%;}
+    .col-lg-12 {width: 100%;}
+  }
+  @media only screen and (min-width: 1440px) {
+    /* For Large desktop: */
+    .col-xl{   
+    max-width: 1440px;
+    text-align: center;
+    }
+  }
