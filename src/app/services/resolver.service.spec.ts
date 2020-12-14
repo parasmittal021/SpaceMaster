@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
-import { LaunchResolverService } from './launch-resolver.service';
+import { ResolverService } from './resolver.service';
 
 describe('LaunchResolverService', () => {
-  let service: LaunchResolverService;
+  let service: ResolverService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({ providers: [LaunchResolverService] });
-    service = TestBed.inject(LaunchResolverService);
+    TestBed.configureTestingModule({ providers: [ResolverService] });
+    service = TestBed.inject(ResolverService);
   });
 
   it('can load instance', () => {

@@ -5,7 +5,7 @@ import { Observable, of } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class LaunchResolverService implements Resolve<any> {
+export class ResolverService implements Resolve<any> {
 
   constructor() { }
   resolve(): Observable<any> {

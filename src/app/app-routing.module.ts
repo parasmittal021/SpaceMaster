@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './Component/dashboard/dashboard.component';
-import { LaunchResolverService } from './services/launch-resolver.service';
+import { ResolverService } from './services/resolver.service';
 
 const routes: Routes = [
   {
@@ -10,7 +10,7 @@ const routes: Routes = [
     children: [
       {
         path: 'v3/launches', component: DashboardComponent, resolve: {
-          viewdata: LaunchResolverService
+          viewdata: ResolverService
         },
         runGuardsAndResolvers: 'pathParamsOrQueryParamsChange'
       },
@@ -23,6 +23,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  providers: [LaunchResolverService]
+  providers: [ResolverService]
 })
 export class AppRoutingModule { }
