@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { SpaceDataService } from 'src/app/services/space-data.service';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -8,7 +9,7 @@ import { Subscription } from 'rxjs';
 })
 export class DashboardComponent implements OnInit, OnDestroy {
 
-  constructor(private router: Router, private route: ActivatedRoute) { }
+  constructor(private router: Router, private route: ActivatedRoute,private spaceDataService:SpaceDataService) { }
   observableSubscription: Subscription;
   viewdata: any;
   username: string = "Paras Mittal";
@@ -22,8 +23,11 @@ export class DashboardComponent implements OnInit, OnDestroy {
     value: false
   }];
   ngOnInit() {
-    this.observableSubscription = this.route.data.subscribe(data => {
-      this.viewdata = data.viewdata;
+    this.route.queryParams.subscribe(params => {
+      console.log(params);
+      this.observableSubscription=    this.spaceDataService.getAllData(params).subscribe((response)=>{
+        this.viewdata=response;
+      })
     });
   }
   removeParams(routerLink: any[], queryParam: { [key: string]: string }) {
@@ -36,4 +40,5 @@ export class DashboardComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.observableSubscription.unsubscribe();
   }
+  
 }

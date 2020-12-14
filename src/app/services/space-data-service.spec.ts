@@ -1,24 +1,18 @@
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
-import { ActivatedRouteSnapshot, Params } from '@angular/router';
+import {  Params } from '@angular/router';
 import { of } from 'rxjs';
 import { SpaceDataService } from 'src/app/services/space-data.service';
-import { asapScheduler, scheduled } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+
 
 describe('SpaceDataService', async () => {
     let service: SpaceDataService;
-    let httpMock: HttpTestingController;
-    let httpService:HttpTestingController;
-    //let hTTp:HttpClient
     beforeEach(async () => {
         await TestBed.configureTestingModule({
             imports: [HttpClientTestingModule],
             providers: [SpaceDataService]
         }).compileComponents();
         service = TestBed.inject(SpaceDataService);
-        httpMock = TestBed.get(HttpTestingController);
-        httpService = TestBed.inject(HttpTestingController);
     });
     it('Space Date Service should be created', () => {
         expect(service).toBeTruthy();
