@@ -60,34 +60,34 @@
                 <div class=" col-md-6 col-lg-3 col-sm-12 card" *ngFor="let item of viewdata"
                     style=" margin: 0px 7px 10px 7px;">
                     <div style="background-color: lightgrey; text-align: center;">
-                        <img style="margin-left: auto; margin-right: auto;" [lazyLoad]="item.links.mission_patch"
+                        <img style="margin-left: auto; margin-right: auto;" [lazyLoad]="item.missionPatch"
                             alt="space photo" loading="lazy" width="200" height="200">
                     </div>
                     <ul style="list-style-type: none;padding:0px;">
-                        <li style="color:darkblue;font-size: large;"><strong>{{item.mission_name}}
-                                #{{item.flight_number}}</strong>
+                        <li style="color:darkblue;font-size: large;"><strong>{{item.missionName}}
+                                #{{item.flightNumber}}</strong>
                         </li>
                         <li style="font-size: large;display:flex;margin-top: 6px;"><strong>Mission
                                 Id's:</strong>
                             <ul style="list-style-type: none; display: block;padding: 1px;">
-                                <li style="color:darkblue;">{{viewdata.mission_id}}</li>
+                                <li style="color:darkblue;">{{viewdata.missionId}}</li>
                             </ul>
                         </li>
-                        <li style="color:darkblue;">{{item.mission_id}}</li>
+                        <li style="color:darkblue;">{{item.missionId}}</li>
                         <li style="margin-top:6px; font-size: large;display: flex;"><strong>Launch Year :</strong>
                             <ul style="list-style-type: none; display: inline;padding: 1px;">
-                                <li style="color:darkblue;">{{item.launch_year}}</li>
+                                <li style="color:darkblue;">{{item.launchYear}}</li>
                             </ul>
                         </li>
                         <li style="margin-top:6px;font-size: large;display: flex;"><strong>Succesful Launch:</strong>
                             <ul style="list-style-type: none;padding: 1px;">
-                                <li style="color:darkblue;">{{item.launch_success}}</li>
+                                <li style="color:darkblue;">{{item.launchSuccess}}</li>
                             </ul>
                         </li>
                         <li style="margin-top:6px;font-size: large;display: flex;">
                             <strong>Succesful Landing:</strong>
                             <ul style="list-style-type: none;padding: 1px;">
-                                <li style="color:darkblue;">{{item?.rocket?.first_stage?.cores[0]?.land_success}}</li>
+                                <li style="color:darkblue;">{{item.landSuccess}}</li>
                             </ul>
                         </li>
                     </ul>
