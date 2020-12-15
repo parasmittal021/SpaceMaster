@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { ISpaceDataModel, SpaceDataModel } from 'src/app/Model/spaceData';
 import { SpaceDataService } from 'src/app/services/space-data.service';
 @Component({
@@ -7,13 +8,18 @@ import { SpaceDataService } from 'src/app/services/space-data.service';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements OnInit, OnDestroy {
 
   constructor(private router: Router, private route: ActivatedRoute, private spaceDataService: SpaceDataService) { }
+  
+  ngOnDestroy(): void {
+    this.observableSubscription.unsubscribe();
+  }
 
-  viewdata: SpaceDataModel[]=[];
+  viewdata: SpaceDataModel[] = [];
   spaceData: ISpaceDataModel[];
-  singleViewdata:SpaceDataModel;
+  singleViewdata: SpaceDataModel;
+  observableSubscription = new Subscription();
   username: string = "Paras Mittal";
   year = ['2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020'];
   trueorfalse = [{
@@ -25,12 +31,12 @@ export class DashboardComponent implements OnInit {
     value: false
   }];
   ngOnInit() {
-    this.route.queryParams.subscribe(params => {
- this.spaceDataService.getAllData(params).subscribe((response) => {
+    this.observableSubscription = this.route.queryParams.subscribe(params => {
+      this.spaceDataService.getAllData(params).subscribe((response) => {
         this.spaceData = response;
-        this.viewdata=[];
-        for(let i=0;i<this.spaceData.length;i++){
-          this.singleViewdata=new SpaceDataModel(this.spaceData[i]);
+        this.viewdata = [];
+        for (let i = 0; i < this.spaceData.length; i++) {
+          this.singleViewdata = new SpaceDataModel(this.spaceData[i]);
           this.viewdata.push(this.singleViewdata);
         }
       })
@@ -43,6 +49,6 @@ export class DashboardComponent implements OnInit {
       queryParamsHandling: 'merge'
     });
   }
- 
+
 
 }
