@@ -40,3 +40,7 @@ Images are lazy loaded by native browser native lazy-loading.
 
 $ npm test
 
+## Genertating unit tests coverage report
+
+$ npm test --code-coverage
+
