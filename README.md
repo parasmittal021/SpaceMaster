@@ -9,14 +9,14 @@ App is purely build on HTML and CSS.
 ## 2. Images are lazy loaded :
 Images are lazy loaded by browser native lazy-loading.
 ## 3. Tech Stack :
-Angular8
-HTML5
-CSS3
-NodeJS
-Jasmin + Karma
-GitHub
-Heroku
-VS Code
+*Angular8
+*HTML5
+*CSS3
+*NodeJS
+*Jasmin + Karma
+*GitHub
+*Heroku
+*VS Code
 
 ## Mobile View
 
