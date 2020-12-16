@@ -7,7 +7,16 @@ Deployed Url:- https://serene-garden-46463.herokuapp.com/
 ## 1. No CSS Framework used : 
 App is purely build on HTML and CSS.
 ## 2. Images are lazy loaded :
-Images are lazy loaded by native browser native lazy-loading.
+Images are lazy loaded by browser native lazy-loading.
+## 3. Tech Stack :
+Angular8
+HTML5
+CSS3
+NodeJS
+Jasmin + Karma
+GitHub
+Heroku
+VS Code
 
 ## Mobile View
 
