@@ -10,7 +10,7 @@ App is purely build on HTML and CSS.
 Images are lazy loaded by browser native lazy-loading.
 ## 3. Tech Stack :
 - Angular8
--HTML5
+- HTML5
 - CSS3
 - NodeJS
 - Jasmin + Karma
